@@ -1,0 +1,25 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 21, 2021
+ *      Author: ahmed
+ */
+#include "HCSR04_ultrasonic_sensor.h"
+#include "lcd.h"
+
+int main(void)
+{
+	/* Setup Configurations */
+	LCD_init();
+	LCD_displayString("Distance = ");
+	Ultrasonic_init();
+
+	/* Super Loop */
+	while(1)
+	{
+		Ultrasonic_readDistance();
+		LCD_moveCursor(0, 11);
+		LCD_intgerToString(Ultrasonic_readDistance());
+		LCD_displayString("cm");
+	}
+}

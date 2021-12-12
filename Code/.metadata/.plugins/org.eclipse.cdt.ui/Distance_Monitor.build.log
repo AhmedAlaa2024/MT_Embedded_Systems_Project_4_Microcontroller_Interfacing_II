@@ -1,0 +1,38 @@
+18:13:29 **** Incremental Build of configuration Debug for project Distance_Monitor ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:13:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+In file included from ../main.c:17:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: Distance_Monitor.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Distance_Monitor.map -mmcu=atmega16 -o "Distance_Monitor.elf"  ./HCSR04_ultrasonic_sensor.o ./gpio.o ./icu.o ./lcd.o ./main.o   
+Finished building target: Distance_Monitor.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Distance_Monitor.elf  >"Distance_Monitor.lss"
+Finished building: Distance_Monitor.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Distance_Monitor.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9616 bytes (58.7% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (27.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+18:13:30 Build Finished. 0 errors, 2 warnings. (took 993ms)
+

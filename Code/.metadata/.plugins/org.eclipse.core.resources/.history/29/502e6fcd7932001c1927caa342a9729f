@@ -1,0 +1,33 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 21, 2021
+ *      Author: ahmed
+ */
+
+#define F_CPU 8000000UL
+
+#include "HCSR04_ultrasonic_sensor.h"
+#include "lcd.h"
+#include "util/delay.h"
+#include "std_types.h"
+
+int main(void)
+{
+	/* Setup Configurations */
+	register volatile uint16 distance = 0;
+	LCD_init();
+	LCD_displayString("Distance = ");
+	LCD_moveCursor(0, 14);
+	LCD_displayString("cm");
+	Ultrasonic_init();
+
+	distance = Ultrasonic_readDistance();
+	/* Super Loop */
+	while(1)
+	{
+		LCD_moveCursor(0, 11);
+		LCD_intgerToString(distance);
+
+	}
+}

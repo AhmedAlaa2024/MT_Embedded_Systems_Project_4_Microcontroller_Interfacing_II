@@ -1,0 +1,15 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 21, 2021
+ *      Author: ahmed
+ */
+
+
+#include "HCSR04_ultrasonic_sensor.h"
+#include "lcd.h"
+
+int main(void)
+{
+	/* Setup Configurations */
+}
